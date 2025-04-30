@@ -7,7 +7,7 @@ const Footer = () => {
     return(
         <>
      <section className="footer-area">
-      <div className="footer-container">
+      <div className="footer-top-container">
           <div className="footer-left">
             <h2>AIZU</h2>
             <span>東北の温泉施設</span>
