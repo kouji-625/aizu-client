@@ -36,9 +36,13 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "vite": "^6.2.0"
+    "rollup": "^4.40.1",
+    "vite": "^6.3.4"
   },
   "optionalDependencies": {
-  "@rollup/rollup-linux-x64-gnu": "^4.40.1"
-}
+    "@rollup/rollup-linux-x64-gnu": "^4.40.1"
+  },
+  "resolutions": {
+    "@rollup/rollup-linux-x64-gnu": "^4.40.1"
+  }
 }
