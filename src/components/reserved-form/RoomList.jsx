@@ -40,8 +40,8 @@ const RoomList = ({ formData, setValue }) => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/rooms`)
-        if (!response.ok) {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/rooms`);
+                if (!response.ok) {
           throw new Error('データの取得に失敗しました');
         }
         const data = await response.json();

@@ -57,7 +57,7 @@ const CustomerForm = ({ formData, onSubmit }) => {
     console.log('roomId の値:', formData.roomId); // roomId を個別にログ出力
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/reservations`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reservations`,{ 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
