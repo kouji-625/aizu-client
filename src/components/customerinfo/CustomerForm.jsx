@@ -57,7 +57,7 @@ const CustomerForm = ({ formData, onSubmit }) => {
     console.log('roomId の値:', formData.roomId); // roomId を個別にログ出力
 
     try {
-      const response = await fetch("http://localhost:5000/api/reservations", {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/reservations`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,12 +69,12 @@ const CustomerForm = ({ formData, onSubmit }) => {
         setServerError(result.errors ? result.errors[0].msg : result.error);
         return;
       }
-      // 成功したら予約完了ページに遷移
       navigate("/confirmation", { state: { reservation: result } });
     } catch (err) {
       setServerError("サーバーエラーが発生しました");
-    }
-  };
+      }
+    };
+    
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)}>
