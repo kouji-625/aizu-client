@@ -1,0 +1,67 @@
+@media screen and (min-width: 751px) {
+  .confirmation-info {
+      background-color: #f4f4f4;
+      min-height: 100vh;
+      margin-inline: auto;
+      width: 100vw;
+  }
+    .confirmation-container{
+      width: 80%;
+      margin-inline: auto;
+      padding: 3em 0;
+      display: flex;
+    }  
+    .confirmation-summary-area{
+      width:40%;
+      background-color: #fff;
+  }
+  .confirmation-form-area{
+      width:60%;
+      background-color: #fff;
+      margin-right: 2em;
+  }
+  .confirmation-form-title{
+    font-size: 1.4em;
+    margin-left: 10vw;
+    height: 4vh;
+    line-height: 5;
+  }
+ 
+    .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .confirmation-info{
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    margin-inline: auto;
+    width: 100vw;
+  }
+  .confirmation-container{
+      width: 90%;
+      margin-inline: auto;
+      padding: 3em 0;
+      display: flex;
+      flex-direction: column-reverse;  
+  }
+  .confirmation-summary-area{
+    width: 100%;
+    background-color: #fff;
+    padding: 2em;
+  }
+  .confirmation-form-title{
+    font-size: 1.4em;
+    margin-left: 10vw;
+    height: 4vh;
+    line-height: 5;
+  }
+  .confirmation-form-area{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 2em;
+  }
+
+}

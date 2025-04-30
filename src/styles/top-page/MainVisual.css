@@ -1,0 +1,174 @@
+@media screen and (min-width: 751px) {
+    .main-visual{
+     width: 100vw;
+     height: 100vh;
+   }
+   .main-moovie{
+     position: relative;
+     width: 100vw;
+     height: 100vh;
+     overflow: hidden;
+   }
+   .main-moovie::after{
+     content: "";
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.2); /*動画の上から被せる*/
+     display: block;
+     z-index: 2;
+   }
+   #video1{
+     position: absolute;
+     top: 0;
+     left: 50%;
+     width: 100%;
+     height: 100%;
+     transform: scale(2.0);
+     object-fit: cover;
+   }
+   #video2{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: scale(2.0);
+    object-fit: cover;
+  }
+
+   .moovie{
+     opacity: 0;
+     transition: opacity 3s ease;
+   }
+   .moovie.active{
+     opacity: 1;
+   }
+
+   .header-logo h1{
+    position: absolute;
+    top: auto;
+    left: 3.5vw;
+    bottom: 5rem;
+    color: #fff;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 4em;
+    letter-spacing: 0.8em;
+  }
+  .header-logo span{
+    position: absolute;
+    top: auto;
+    left: 3.5vw;
+    bottom: 3rem;
+    color: #fff;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 1em;
+    letter-spacing: 0.8em;
+  }
+  .main-visual-concept{
+    position: absolute;
+    top: 45%;
+    right: 20%;
+    width: 33%;
+  }
+  .main-visual-concept h2{
+    font-size: 3em;
+    font-family: "Noto Serif Jp";
+    color: #fff;
+  }
+  .main-visual-concept span{
+    padding-left: 50%;
+  }
+}
+
+/*sp*/
+  @media screen and (max-width: 750px){
+    .main-visual{
+      width: 100vw;
+      height: 100vh;
+    }
+    .main-moovie{
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .main-moovie::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2); /*動画の上から被せる*/
+      display: block;
+      z-index: 2;
+    }
+    #video1{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: scale(2.0);
+      object-fit: cover;
+    }
+   #video2{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: scale(2.0);
+      object-fit: cover;
+    }
+
+    /*.moovie2{
+      opacity: 1;
+      transition: opacity 3s ease;
+    }
+    .moovie.active{
+      opacity: 1;
+    }*/
+    .header-logo h1{
+      position: absolute;
+      top: auto;
+      left: 3.5vw;
+      bottom: 5rem;
+      color: #fff;
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 3em;
+      letter-spacing: 0.3em;
+    }
+    .header-logo span{
+      position: absolute;
+      top: auto;
+      left: 3.5vw;
+      bottom: 3rem;
+      color: #fff;
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 1em;
+      letter-spacing: 0.1em;
+    }
+    .main-visual-concept{
+      position: absolute;
+      top: 45%;
+      left: 2%;
+      width: auto;
+    }
+    .main-visual-concept h2{
+      font-size: 2em;
+      font-family: "Noto Serif Jp";
+      color: #fff;
+    }
+    .main-visual-concept span{
+      padding-left: 50%;
+    }
+    
+      }
+
+  

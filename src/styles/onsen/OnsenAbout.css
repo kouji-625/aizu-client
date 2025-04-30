@@ -1,0 +1,57 @@
+@media screen and (min-width: 751px) {
+ .onsen-about-area{
+    min-height: 500px;
+    height: 60vh;
+    width: 100vw;
+  }
+  .onsen-about-container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .onsen-about-container p{
+        white-space: pre-wrap;
+        display: inline-block;
+        line-height: 2.6;
+        font-family: "Noto Serif Jp";
+        letter-spacing: 0.1em;  
+        margin-left: auto;
+      }
+ .onsen-about-container h2{
+    margin-left: auto;
+    font-size: 1.2em;
+    font-family: "Noto Serif Jp";
+    letter-spacing: 0.2em;  
+ }
+}
+
+@media screen and (max-width: 750px){
+    .onsen-about-area{
+        width: 100vw;
+        margin: 4em 0;
+
+      }
+      .onsen-about-container{
+        width: 80%;
+        height: 100%;
+        margin-inline: auto;
+      }
+      .onsen-about-container p{
+            white-space: pre-wrap;
+            display: inline-block;
+            line-height: 2.6;
+            font-family: "Noto Serif Jp";
+            letter-spacing: 0.1em;  
+            margin-left: auto;
+          }
+     .onsen-about-container h2{
+        margin-left: auto;
+        font-size: 1.2em;
+        font-family: "Noto Serif Jp";
+        letter-spacing: 0.2em;  
+        padding-bottom: 2em;
+     }
+    
+}

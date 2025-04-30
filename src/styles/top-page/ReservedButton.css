@@ -1,0 +1,52 @@
+@media screen and (min-width: 751px) {
+/*js_reserved*/
+.js-reserved{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 3.5vw;
+    margin: auto;
+    padding: 0.4em;
+    height: 14em;  
+    width: 2.5vw;
+    color: #fff;
+    z-index: 100;
+    text-align: center;
+    letter-spacing: 0.3em;
+    display: block;
+    transition: 0.3s;
+    background: #14264e;
+    writing-mode: vertical-lr;
+    opacity: 0.9;
+  }
+  .js-reserved:hover{
+    opacity: 0.7;
+ }
+}
+
+@media screen and (max-width: 750px){
+/*js_reserved*/
+.js-reserved{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0vw;
+    margin: auto;
+    padding: 0.4em;
+    height: 14em;  
+    width: 2.27em;
+    color: #fff;
+    z-index: 100;
+    text-align: center;
+    letter-spacing: 0.3em;
+    display: block;
+    transition: 0.3s;
+    background: #14264e;
+    writing-mode: vertical-lr;
+    opacity: 0.9;
+  }
+  .js-reserved:hover{
+    opacity: 0.7;
+  }
+  
+}

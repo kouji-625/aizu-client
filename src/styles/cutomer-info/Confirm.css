@@ -1,0 +1,94 @@
+@media screen and (min-width: 751px) {
+    .error-message{
+        color: red;
+        font-size: 0.8em;
+    }
+    .confirm-container{
+        width: 80%;
+        margin-inline:auto;
+    }
+    .confirm-item{
+        display: flex;
+        margin-bottom: 2em;
+    }
+    .confirm-item:first-child{
+        margin-top: 2em;
+    }
+    .confirm-item span{
+        width: 30%;
+    }
+    .confirm-button-container{
+        display: flex;
+        align-items: center;
+        margin-top: 6em;
+    }
+    .confirm-title{
+        font-size: 1.4em;
+        border-bottom: 1px solid #dfdfdf;
+        padding: 15px 30px;
+    }
+    .confirm-btn{
+        margin-inline: auto;
+        }
+    .confirm-button{
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";  
+        font-size: 110%;  
+        cursor: pointer;
+    }
+    .return{
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";    
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .confirm-title{
+        font-size: 1.4em;
+        border-bottom: 1px solid #dfdfdf;
+        padding: 1em 0 1em 1em;
+    }
+    .confirm-container{
+        padding: 1em;
+    }
+    .confirm-container span{
+        display: inline-block;
+        width: 30%;
+    }
+    .confirm-item{
+        padding-bottom: 2em;
+    }
+    .confirm-button{
+        padding: 12px;
+        border-radius: 10px;
+        width: 100%;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";
+        font-size: 110%;    
+    }
+    .confirm-button-container{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 3em;
+    }
+    .return{ 
+        text-align: center;
+        width: 50%;
+        margin-inline: auto;
+    }
+    .confirm-btn{
+        margin: 2em 0;
+    }
+}

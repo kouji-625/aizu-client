@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*リセットCSS*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Noto Serif Jp", "メイリオ", Meiryo, "ヒラギノ角ゴ pro W3", 'Hiragino Sans', 'Hiragino Kaku Gothic Pro',  "MS Pゴシック", "MS PGothic",'sans-serif';
+  font-size:  16px;
+}
+ h1, h2, h3, h4, h5, h6{
+  font-size: 100%;
+}
+ li{
+  list-style-type: none;
+}
+ table{
+  border-collapse: collapse;
+   border-spacing: 0;
+}
+img{
+  border: none;
+  display: block;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+

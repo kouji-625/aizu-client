@@ -1,0 +1,54 @@
+@media screen and (min-width: 751px) {
+    .onsen-images-area{
+        width: 100vw;
+        height: 80vh;
+    }
+    .onsen-images-container{
+        width: 80%;
+        margin-inline: auto;
+        display: flex;
+    }
+    .onsen-image-left{
+        background-image: url("../../assets/images/onsen-page/onsen_info2.jpg");
+        background-repeat: no-repeat;
+        width: 50%;
+        min-height: 400px;
+        z-index: 1;
+        margin-right: 2em;
+      }
+      .onsen-image-right{
+        background-image: url("../../assets/images/onsen-page/onsen_info3.jpg");
+        background-repeat: no-repeat;
+        width: 50%;
+        min-height: 400px;
+        z-index: 1;
+        margin-top: 3em;
+      }
+}
+
+@media screen and (max-width: 750px){
+  .onsen-images-area{
+    width: 100vw;
+    height: 100vh;
+}
+.onsen-images-container{
+    width: 80%;
+    margin-inline: auto;
+}
+.onsen-image-left{
+    background-image: url("../../assets/images/onsen-page/onsen_info2.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 280px;
+    z-index: 1;
+    margin-right: 2em;
+  }
+  .onsen-image-right{
+    background-image: url("../../assets/images/onsen-page/onsen_info3.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 280px;
+    z-index: 1;
+    margin-top: 3em;
+  }
+}

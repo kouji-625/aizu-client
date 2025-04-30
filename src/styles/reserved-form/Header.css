@@ -1,0 +1,85 @@
+@media screen and (min-width: 751px) {
+.header-container {
+    width: 80vw;
+    margin-inline: auto;
+    margin-top: 4em;
+  background-color: #fff; 
+ }
+  .form-group {
+    margin-bottom: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+   
+  }
+  .form-group label,
+.form-group span,
+.form-group input {
+  background-color: transparent;
+}
+
+.header-upper, .header-lower{
+    display: flex;
+    font-size: 1rem;
+  }
+  .header-upper{
+    margin-right: 2em;
+  }
+.form-group span {
+    text-align: left;
+    margin-right: auto;
+    padding-bottom: 0.5em;
+    font-family: "Noto Serif Jp";
+  }
+  
+  .form-group input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .form-group label:first-of-type{
+    margin-right: 2em;
+  }
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .reservation-form{
+    padding: 1em 0;
+  }
+  .header-container{
+    width: 90vw;
+    margin-inline: auto;
+    background-color: #fff;
+    padding:1em;
+    margin-bottom: 2em;
+  }
+  .form-group{
+    width: 100%;
+  }
+  .form-group label{
+    margin-bottom: 2em;
+    display: block;
+    }
+  .header-upper input, .header-lower input{
+    width: 96%;
+  }
+  .header-lower{
+    width: 100%;
+  }
+  .form-group span {
+    font-family: "Noto Serif Jp";
+  }
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}

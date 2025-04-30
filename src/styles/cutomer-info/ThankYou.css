@@ -1,0 +1,107 @@
+@media screen and (min-width: 751px) {
+    .thankyou-container{
+        background-color: #f4f4f4;
+        min-height: 100vh;
+        width: 100vw;  
+        padding: 4em 0;/*これがないとbackground-color: #fffになってしまう*/
+    }
+    .thankyou-item{
+        width: 80%;
+        margin-inline: auto;
+        background-color: #fff;  
+        height: 60vh;
+        margin-top: 4em;
+    }
+    .thankyou-item h1{
+        font-size: 1.4em;
+        border-bottom: 1px solid #dfdfdf;
+        text-align: center;
+        padding: 2em 0;
+    }
+    .thankyou-item h2{
+        text-align: center;
+        padding: 1em 1em;
+        line-height: 1.8;
+    }
+    .thankyou-item p{
+        padding: 1em 1em;
+        line-height: 1.8;        
+    }
+    .reservation-box{
+       width: 30%;
+       margin-inline: auto;
+    }
+    .reservation-box p{
+        text-align: left;
+    }
+    .thankyou-button{
+        padding: 1em;
+        border-radius: 10px;
+        width: 200px;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";  
+        font-size: 110%;  
+        cursor: pointer;
+    }
+    .thankyou-btn{
+        width: 10vw;
+        margin-inline: auto;
+        padding-top: 2em;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .thankyou-container{
+        background-color: #f4f4f4;
+        min-height: 100vh;
+        width: 100vw;  
+        padding: 1em 0;/*これがないとbackground-color: #fffになってしまう*/
+    }
+    .reservation-box{
+        width: 80%;
+        margin-inline: auto;
+     }
+ 
+    .thankyou-item{
+        width: 80%;
+        margin-inline: auto;
+        background-color: #fff;  
+        height: 80vh;
+        margin-top: 2em;
+    }
+    .thankyou-item h1{
+        font-size: 1.2em;
+        border-bottom: 1px solid #dfdfdf;
+        text-align: center;
+        padding: 1em 0;
+    }
+    .thankyou-item h2{
+        padding: 1em 1em;
+        line-height: 1.8;
+    }
+    .thankyou-item p{
+        text-align: left;
+        padding: 1em 1em;
+        line-height: 1.8;
+    }
+    .thankyou-button{
+        padding: 1em;
+        border-radius: 10px;
+        width: 80%;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";  
+        font-size: 110%;  
+        cursor: pointer;
+    }
+    .thankyou-btn{
+        width: 100%;
+        display: flex; 
+        justify-content: center;
+        padding-top: 2em; 
+        }
+
+}

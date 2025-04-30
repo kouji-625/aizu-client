@@ -1,0 +1,86 @@
+@media screen and (min-width: 751px) {
+.footer-container{
+    width: 80vw;
+    margin-inline: auto;
+    display: block;
+}
+.footer-title{
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-right: auto;
+}
+.policy{
+    margin: 2em 0 0.7em 1em;
+}
+tbody{
+    padding-top: 2em;
+}
+th{
+    padding: 0.5em 5em 0.5em 0;
+}
+th, td{
+    text-align: left;
+}
+.footer-container span{
+    font-size: 0.8em;
+}
+.payment{
+    margin-top: 2em;
+}
+.payment h3{
+    padding-bottom: 1em;
+    padding-left: 0.7em;
+}
+.payment li{
+    padding-bottom: 0.5em;
+}
+address{
+    padding: 2em 0 1em 0;
+}
+.tel, .e-mail{
+    display: block;
+    padding-bottom: 1em;
+}
+address, .tel, .e-mail{
+    padding-left: 0.7em;
+}
+}
+@media screen and (max-width: 750px){
+    .footer-container{
+        width: 90vw;
+        margin-inline: auto;
+        display: block;
+    }
+    .footer-title{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .policy{
+        margin: 2em 0 0.7em 1em;
+    }
+    tbody{
+        padding-top: 2em;
+    }
+    th{
+        padding: 0.5em 5em 0.5em 0;
+    }
+    th, td{
+        text-align: left;
+    }
+    .footer-container span{
+        font-size: 0.8em;
+    }
+.payment h3{
+    margin: 2em 0 0.7em 1em;
+}
+address{
+    padding: 2em 0 1em 0.3em;
+}
+.payment li{
+    padding: 0.5em 5em 0.5em 0;
+}
+.e-mail, .tel{
+    display: block;
+    padding: 0 0 1em 0.7em;
+}
+    }

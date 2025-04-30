@@ -1,0 +1,105 @@
+@media screen and (min-width: 751px) {
+    .error-message{
+        color: red;
+        font-size: 0.8em;
+    }
+    .label-item{
+        display: flex;
+        margin-bottom: 2.5em;
+    }
+    label{
+        width: 33.3333333%;
+        display: block;
+    }
+    .input-item{
+        display: flex;
+        flex-direction: column;
+        width: 66.666666%;
+    }
+    .customer-area{
+        padding: 40px 30px 0 30px;
+    }
+    .button-container{
+        display: flex;
+        align-items: center;
+        margin-top: 6em;
+    }
+    .customer-btn{
+        margin-inline: auto;
+    }
+    .customer-button{
+        padding: 20px;
+        border-radius: 10px;
+        width: 200px;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";  
+        font-size: 110%;  
+        cursor: pointer;
+    }
+    .customer-return{
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";    
+        font-size: 0.9em;
+    }
+}
+
+    @media screen and (max-width: 750px){
+        .error-message{
+            color: red;
+            font-size: 0.8em;
+        }
+        .label-item{
+            margin-bottom: 2.5em;
+        }
+        label{
+            display: block;
+            padding-bottom: 0.5em;
+        }
+        .input-item{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .customer-area{
+            padding: 1em;
+        }
+        .button-container{
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-top: 6em;
+        }
+        .customer-btn{
+            margin-inline: auto;
+            width: 80vw;
+        }
+        .customer-button{
+            padding: 12px;
+            border-radius: 10px;
+            width: 100%;
+            border: none;
+            color: #fff;
+            background-color: #008acc;
+            font-family: "Noto Serif Jp";  
+            font-size: 110%;  
+        }
+        .customer-return{
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            color: #fff;
+            background-color: #008acc;
+            font-family: "Noto Serif Jp";    
+            font-size: 0.9em;
+            display: block;
+            margin-top: 2em;
+            
+        }
+    
+    }

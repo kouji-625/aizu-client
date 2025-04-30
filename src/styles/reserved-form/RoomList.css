@@ -1,0 +1,151 @@
+@media screen and (min-width: 751px) {
+.room-price-area{
+  height: 20%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.room-list-container{
+    width: 80vw;
+    margin-inline: auto;
+}
+.room-option img{
+    width: 100%;
+    height: 50%;
+}
+.room-option{
+    height: 90vh;
+    margin-bottom: 5em;
+    background-color: #fff;
+}
+.room-option h3{
+    font-size: 130%;
+    font-weight: 600;
+    font-family: "Noto Serif Jp";
+    border-bottom: 1px #f4f4f4 solid;
+    height: 50px; /*インライン要素上下中央*/
+    line-height: 50px; /*インライン要素上下中央*/
+    padding-left: 20px;
+}
+.room-txt1{
+    padding: 20px;
+}
+.room-txt1 span{
+    display: inline-block;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5em;
+}
+.room-price{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 20%;
+    padding-right: 20px;
+}
+.room-price-left, .price-total{
+    margin-right: 2em;
+}
+.room-price-left p, .room-total p{
+    display: block;
+    padding-bottom: 0.5em;
+}
+.room-price-left p,
+.room-price-left span {
+  margin: 0;
+}
+.room-submit button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 14%;
+    color: #fff;
+    background-color: #008acc;
+    font-family: "Noto Serif Jp";
+}
+.room-submit button:hover{
+    opacity: 0.7;
+}
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}
+@media screen and (max-width: 750px){
+    .room-price-area{
+        height: 40%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+      
+    .room-list-container{
+        width: 90vw;
+        margin-inline: auto;
+    }
+    .room-option img{
+        width: 90%;
+        height: 30%;
+        margin-inline: auto;
+        margin-top: 3em;
+    }
+    .room-option{
+        height: 80vh;
+        margin-bottom: 10%;
+        background-color: #fff;
+    }
+    .room-option h3{
+        font-size: 110%;
+        font-weight: 600;
+        font-family: "Noto Serif Jp";
+        border-bottom: 1px #f4f4f4 solid;
+        height: 50px; /*インライン要素上下中央*/
+        line-height: 50px; /*インライン要素上下中央*/
+        padding-left: 20px;
+    }
+    .room-txt1{
+        padding: 20px;
+    }
+    .room-txt1 span{
+        display: inline-block;
+        height: 20%;
+        padding-bottom: 0.5em;
+    }
+    .room-price{
+        width: 80vw;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .room-price-left p, .room-total p{
+        display: block;
+        padding-bottom: 0.5em;
+    }
+    .room-price-left p,
+    .room-price-left span {
+      margin: 0;
+    }
+    .room-submit button{
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 2em;
+        color: #fff;
+        background-color: #008acc;
+        font-family: "Noto Serif Jp";
+        width: 80vw;
+    }
+    .room-price-left{
+        display: none;
+    }
+.room-total{
+    margin-inline: auto;
+}
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}

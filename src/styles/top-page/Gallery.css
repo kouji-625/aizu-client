@@ -1,0 +1,117 @@
+/* 矢印のスタイル */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #14264e;
+  z-index: 10;
+}
+.swiper-button-prev::after, .swiper-button-next::after{
+  margin-bottom: 0.5em;
+}
+
+/* ページネーション（インジケーター）のスタイル */
+.swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  margin: 0 5px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #14264e;
+}
+  
+
+
+@media screen and (min-width: 751px) {
+  /* Slider */
+/* gallery 全体 */
+.gallery {
+  height: 60vh;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* 画像の調整 */
+.gallery img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 2em auto; 
+}
+.gallery-title{
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 1.8em;
+  padding-bottom: 2em;
+  color: #14264e;
+  text-align: center;
+}
+/* モーダルオーバーレイ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* 拡大画像 */
+.modal-image {
+  max-width: 40%;
+  max-height: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  object-fit: cover; /* containからcoverに変更 */
+  background-color: #000; /* 余白部分を黒くする */
+  border: none; /* ボーダーを明示的に削除 */
+}
+
+/* スライダー内の画像も少し手を加えて見やすく */
+.gallery-img {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+    }
+
+    @media screen and (max-width: 750px){
+      .modal-overlay{
+        display: none;
+      }
+      .gallery{
+        width: 70%;
+        height: 60vh;
+        margin-inline: auto;
+      }
+      
+      /* 画像の調整 */
+      .gallery img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto; 
+      }
+      .gallery-title{
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1.8em;
+        padding-bottom: 2em;
+        color: #14264e;
+        text-align: center;
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+
+    }

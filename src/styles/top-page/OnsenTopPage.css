@@ -1,0 +1,150 @@
+@media screen and (min-width: 751px) {
+  /*onsen-area*/
+  .onsen-area {
+      width: 100vw;
+      height: 90vh; 
+      display: inline-block; 
+  }
+  .onsen-container {
+      width: 80%;
+      height: 100%;
+      margin-inline: auto;
+      position: relative;
+  }
+  .onsen-image {
+      background-image: url("../../assets/images/top-page/onsen.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 50%;
+      min-height: 400px;
+      z-index: 1;
+  }
+  .onsen-txt-container {
+      width: 40%;
+      height: 40%;
+      position: absolute;
+      top: 22em;
+      left: 34em;
+      z-index: 2;
+  }
+  .onsen-txt-box {
+      margin-inline: auto;
+      background-color: #f7f7f7;
+      padding: 3em 0 3em 5em;
+      opacity: 0.8;
+      padding: 5em 5em 5em 6em; 
+  }
+  .onsen-txt-box > span {
+      white-space: pre-wrap;
+      font-family: "Noto Serif Jp";
+      letter-spacing: 0.2em;
+      line-height: 0.2em; 
+  }
+  .onsen-top-title {
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 1.8em;
+      padding-bottom: 0.5em;
+      color: #14264e;
+  }
+  /*READ MORE*/
+  .read-more-onsen:hover {
+      opacity: 0.7;
+  }
+  .read-more-onsen:hover span::before {
+      left: 1.5em;
+  }
+  .read-more-onsen {
+      position: relative;
+      display: flex;
+      background-color: #14264e;
+      color: #fff;
+      width: 100%;
+      height: 3em;
+      justify-content: center;
+      align-items: center;
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      margin-top: 3em;
+      cursor: pointer;
+      border: none;
+  }
+  .read-more-onsen span::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 1px;
+      position: absolute;
+      left: 2em;
+      top: 48%;
+      background-color: #fffde8;
+      transition: all 0.3s;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /*onsen-area*/
+  .onsen-area {
+      width: 100vw;
+      display: inline-block; 
+      padding: 3em 0;
+  }
+  .onsen-container {
+      width: 80%;
+      margin-inline: auto;
+  }
+  .onsen-image {
+      background-image: url("../../assets/images/top-page/onsen.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 100%;
+      min-height: 250px;
+  }
+  .onsen-txt-box {
+      margin-inline: auto;
+  }
+  .onsen-txt-box > span {
+      white-space: pre-wrap;
+      font-family: "Noto Serif Jp";
+      letter-spacing: 0.2em;
+      line-height: 0.2em; 
+  }
+  .onsen-top-title {
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 1.8em;
+      padding: 1em 0 1em 0.3em;
+      color: #14264e;
+  }
+  /*READ MORE-onsen*/
+  .read-more-onsen {
+      display: inline-block;
+      position: relative;
+      color: #14264e;
+      width: 100%;
+      height: 3em;
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 3em;
+      text-align: center;
+      background-color: transparent; /* 背景色を透明に */
+      background: transparent; /* 背景全体を透明に（デフォルトスタイル対策） */
+      border: none; /* デフォルトの枠線を削除 */
+      padding-bottom: 2em;
+  }
+  .read-more-onsen span::before {
+      content: "";
+      display: block;
+      width: 90%;
+      height: 1px;
+      position: absolute;
+      left: 7%;
+      top: 73%;
+      background-color: #14264e;
+  }
+}

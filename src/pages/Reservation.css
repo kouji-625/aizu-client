@@ -1,0 +1,20 @@
+/* 基本的なリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 親要素の高さを確保 */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 予約フォーム全体のスタイル */
+.reservation-form {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    padding: 3em 0; /*headerレイアウト上で最重要*/
+}
