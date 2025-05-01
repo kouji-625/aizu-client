@@ -5,25 +5,21 @@ import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/cutomer-info/CustomerForm.css";
 
-// Yupのバリデーションスキーマ
+// Yupのバリデーションスキーマ（変更なし）
 const schema = Yup.object().shape({
   name: Yup.string().required("名前は必須です"),
-  email: Yup
-    .string()
+  email: Yup.string()
     .email("有効なメールアドレスを入力してください")
     .required("メールは必須です"),
-  postalCode: Yup
-    .string()
+  postalCode: Yup.string()
     .required("郵便番号は必須です")
     .matches(/^\d{3}-\d{4}$/, "郵便番号は「123-4567」の形式で入力してください"),
-  address: Yup
-    .string()
+  address: Yup.string()
     .required("住所は必須です")
     .min(5, "住所は5文字以上で入力してください")
     .max(100, "住所は100文字以内にしてください")
     .matches(/^[^\s].*$/, "住所の先頭に空白は使用できません"),
-  phone: Yup
-    .string()
+  phone: Yup.string()
     .required("電話番号は必須です")
     .matches(/^\d{10,11}$/, "電話番号は10〜11桁の数字で入力してください"),
 });
@@ -56,25 +52,13 @@ const CustomerForm = ({ formData, onSubmit }) => {
     console.log("送信データ:", reservationData); // デバッグ用
     console.log('roomId の値:', formData.roomId); // roomId を個別にログ出力
 
+    // バックエンドへの POST リクエストを削除し、確認画面に遷移
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reservations`,{ 
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reservationData),
-      });
-      const result = await response.json();
-      if (!response.ok) {
-        setServerError(result.errors ? result.errors[0].msg : result.error);
-        return;
-      }
-      navigate("/confirmation", { state: { reservation: result } });
+      navigate("/confirmation", { state: { reservation: reservationData } });
     } catch (err) {
-      setServerError("サーバーエラーが発生しました");
-      }
-    };
-    
+      setServerError("エラーが発生しました");
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)}>
