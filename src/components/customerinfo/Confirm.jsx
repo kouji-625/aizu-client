@@ -7,6 +7,7 @@ const Confirm = ({ reservation }) => {
 
   const handleConfirm = async () => {
     try {
+      console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
       console.log('Sending reservation to backend:', reservation);
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reservations`, {
         method: 'POST',
