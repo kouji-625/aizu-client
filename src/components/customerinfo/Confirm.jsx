@@ -8,14 +8,21 @@ const Confirm = ({ reservation }) => {
   const handleConfirm = async () => {
     try {
       console.log('Sending reservation to backend:', reservation);
-      const response = await fetch('/api/reservations', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/reservations`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reservation),
       });
       console.log('Response status:', response.status);
       if (!response.ok) {
-        const errorData = await response.json();
+        const text = await response.text(); // 生のレスポンスを確認
+        console.error('Response text:', text);
+        let errorData;
+        try {
+          errorData = JSON.parse(text);
+        } catch {
+          throw new Error(`予約の確定に失敗しました: ${response.status} ${response.statusText}`);
+        }
         console.error('Error response:', errorData);
         throw new Error(errorData.errors?.[0]?.msg || '予約の確定に失敗しました');
       }
@@ -27,7 +34,8 @@ const Confirm = ({ reservation }) => {
       alert(`エラー: ${error.message}`);
     }
   };
-    return (
+
+  return (
     <div className="confirm-area">
       <div className="confirm-title">
         <h2>お客様情報</h2>
