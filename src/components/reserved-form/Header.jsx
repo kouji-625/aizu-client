@@ -10,6 +10,12 @@ const Header = ({ register, errors, formData, setValue, watch }) => {
   // 手動変更かどうかを管理するフラグ
   const isManualNightsChange = useRef(false);
 
+  // 初期値の確認（デバッグ用）
+  useEffect(() => {
+    console.log('Header formData:', formData);
+    console.log('Header watch values:', { checkIn, checkOut, nights });
+  }, [formData, checkIn, checkOut, nights]);
+
   // チェックアウトから泊数を計算（チェックインまたはチェックアウトが変更されたとき）
   useEffect(() => {
     if (checkIn && checkOut && !isManualNightsChange.current) {
@@ -32,21 +38,18 @@ const Header = ({ register, errors, formData, setValue, watch }) => {
   useEffect(() => {
     if (checkIn && nights && isManualNightsChange.current) {
       const checkInDate = new Date(checkIn);
-      // checkIn に nights を足して新しい checkOut を計算
       const newCheckOutDate = new Date(checkInDate);
       newCheckOutDate.setDate(checkInDate.getDate() + Number(nights));
 
-      // YYYY-MM-DD 形式に変換
       const formattedCheckOut = newCheckOutDate.toISOString().split('T')[0];
       setValue('checkOut', formattedCheckOut);
     }
-    // 計算が終わったらフラグをリセット
     isManualNightsChange.current = false;
   }, [nights, checkIn, setValue]);
 
   // 泊数が手動で変更されたときの処理
   const handleNightsChange = (e) => {
-    isManualNightsChange.current = true; // 手動変更フラグを立てる
+    isManualNightsChange.current = true;
     setValue('nights', e.target.value);
   };
 
@@ -81,7 +84,7 @@ const Header = ({ register, errors, formData, setValue, watch }) => {
               {...register('nights')}
               defaultValue={formData.nights}
               min="1"
-              onChange={handleNightsChange} // 手動変更を検知
+              onChange={handleNightsChange}
             />
             {errors.nights && <p className="error">{errors.nights.message}</p>}
           </label>

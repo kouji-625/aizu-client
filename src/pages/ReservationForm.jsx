@@ -8,9 +8,16 @@ import ReservedFooter from '../components/reserved-form/ReservedFooter.jsx';
 import './Reservation.css';
 
 const ReservationForm = () => {
+  // 現在の日付と翌日の日付を計算
+  const today = new Date();
+  const todayFormatted = today.toISOString().split('T')[0]; // 例: 2025-05-03
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  const tomorrowFormatted = tomorrow.toISOString().split('T')[0]; // 例: 2025-05-04
+
   const [formData, setFormData] = useState({
-    checkIn: '2025-04-23',
-    checkOut: '2025-04-24',
+    checkIn: todayFormatted,
+    checkOut: tomorrowFormatted,
     nights: 1,
     guests: 1,
     roomType: '',
@@ -27,8 +34,8 @@ const ReservationForm = () => {
   } = useForm({
     resolver: yupResolver(reservationSchema),
     defaultValues: {
-      checkIn: '2025-04-23',
-      checkOut: '2025-04-24',
+      checkIn: todayFormatted,
+      checkOut: tomorrowFormatted,
       nights: 1,
       guests: 1,
       roomType: '',
@@ -49,6 +56,16 @@ const ReservationForm = () => {
   // フォームの値が変更されたら formData を更新
   useEffect(() => {
     setFormData({
+      checkIn,
+      checkOut,
+      nights,
+      guests,
+      roomType,
+      roomId,
+      totalPrice,
+    });
+    // デバッグログ
+    console.log('Updated formData:', {
       checkIn,
       checkOut,
       nights,
