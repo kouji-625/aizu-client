@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import "../../styles/cutomer-info/CustomerForm.css";
+import '../../styles/cutomer-info/CustomerForm.css'; // エイリアス使用
 
 // Yupのバリデーションスキーマ（変更なし）
 const schema = Yup.object().shape({
@@ -24,9 +24,10 @@ const schema = Yup.object().shape({
     .matches(/^\d{10,11}$/, "電話番号は10〜11桁の数字で入力してください"),
 });
 
-const CustomerForm = ({ formData, onSubmit }) => {
+const CustomerForm = ({ formData }) => {
   const navigate = useNavigate();
   const [serverError, setServerError] = useState(null);
+  const [roomDetails, setRoomDetails] = useState(null);
 
   const {
     register,
@@ -36,10 +37,48 @@ const CustomerForm = ({ formData, onSubmit }) => {
     resolver: yupResolver(schema),
   });
 
+  // 部屋情報を取得
+  useEffect(() => {
+    const fetchRoomDetails = async () => {
+      try {
+        console.log('Fetching room details for roomId:', formData.roomId); // デバッグ
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/rooms`);
+        if (!response.ok) {
+          throw new Error('部屋情報の取得に失敗しました');
+        }
+        const rooms = await response.json();
+        const room = rooms.find((r) => r._id === formData.roomId);
+        if (!room) {
+          throw new Error(`Room with ID ${formData.roomId} not found`);
+        }
+        setRoomDetails({
+          price: room.price || 0,
+          image: room.image || 'https://res.cloudinary.com/dgfmbwydx/image/upload/v1234567890/placeholder_room.jpg', // プロジェクトのプレースホルダー
+          name: room.name || '不明',
+        });
+      } catch (err) {
+        console.error('Error fetching room details:', err.message);
+        setServerError('部屋情報の取得に失敗しました');
+      }
+    };
+
+    if (formData?.roomId) {
+      fetchRoomDetails();
+    } else {
+      console.error('No roomId provided in formData:', formData);
+      setServerError('部屋を選択してください');
+    }
+  }, [formData?.roomId]);
+
   const handleFormSubmit = async (data) => {
-    // formData（Header.jsx と RoomList.jsx からのデータ）を結合
+    if (!formData.roomId || !roomDetails) {
+      setServerError('部屋を選択してください');
+      return;
+    }
+
+    // formData と roomDetails を結合
     const reservationData = {
-      ...data, // CustomerForm のデータ（name, email, postalCode, address, phone）
+      ...data, // name, email, postalCode, address, phone
       checkIn: formData.checkIn,
       checkOut: formData.checkOut,
       nights: formData.nights,
@@ -47,16 +86,18 @@ const CustomerForm = ({ formData, onSubmit }) => {
       roomType: formData.roomType,
       roomId: formData.roomId,
       totalPrice: formData.totalPrice,
+      roomDetails, // 部屋情報（image, price, name）
     };
 
-    console.log("送信データ:", reservationData); // デバッグ用
-    console.log('roomId の値:', formData.roomId); // roomId を個別にログ出力
+    console.log('Reservation data:', JSON.stringify(reservationData, null, 2)); // デバッグ
+    console.log('roomId:', formData.roomId); // デバッグ
+    console.log('roomDetails:', roomDetails); // デバッグ
 
-    // バックエンドへの POST リクエストを削除し、確認画面に遷移
     try {
-      navigate("/confirmation", { state: { reservation: reservationData } });
+      navigate('/confirmation', { state: { reservation: reservationData } });
     } catch (err) {
-      setServerError("エラーが発生しました");
+      console.error('Navigation error:', err);
+      setServerError('エラーが発生しました');
     }
   };
 

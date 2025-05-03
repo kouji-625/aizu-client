@@ -1,16 +1,22 @@
-import '../../styles/cutomer-info/ReservationSummary.css';
+import '../../styles/cutomer-info/ReservationSummary.css'; // エイリアス使用
 
 const ReservationSummary = ({ reservation }) => {
   // roomDetails が存在しない場合のデフォルト値
   const roomDetails = reservation.roomDetails || {
     price: 0,
-    image: 'https://via.placeholder.com/150', // プレースホルダー画像
+    image: 'https://res.cloudinary.com/dgfmbwydx/image/upload/v1746231054/gallery1_ap9a8o.jpg', // プロジェクトのプレースホルダー
     name: '不明',
   };
 
+  // 画像URLの検証
+  const imageUrl = roomDetails.image && roomDetails.image.startsWith('http')
+    ? roomDetails.image
+    : 'https://res.cloudinary.com/dgfmbwydx/image/upload/v1746231054/gallery1_ap9a8o.jpg'; // プロジェクトのプレースホルダー
+  console.log('Image URL:', imageUrl); // デバッグ
+
   // 料金と合計を計算
-  const price = roomDetails.price; // 1泊1名あたりの料金
-  const totalPrice = reservation.totalPrice || price * reservation.nights * reservation.guests; // 合計料金
+  const price = roomDetails.price || 0; // 1泊1名あたりの料金
+  const totalPrice = reservation.totalPrice || price * (reservation.nights || 1) * (reservation.guests || 1); // 合計料金
 
   // 日付フォーマットの安全性を確保
   const formatDate = (date) => {
@@ -31,7 +37,7 @@ const ReservationSummary = ({ reservation }) => {
         <h2>予約内容</h2>
       </div>
       <div className="summary-container">
-        <img src={roomDetails.image} alt={reservation.roomType || '部屋'} />
+        <img src={imageUrl} alt={reservation.roomType || '部屋'} />
         <p className="summary-item">
           <span>部屋タイプ:</span> {reservation.roomType || '未入力'}
         </p>

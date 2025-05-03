@@ -9,8 +9,14 @@ const Confirmation = () => {
   const [serverError, setServerError] = useState(null);
   const reservation = location.state?.reservation;
 
+  // デバッグログ
+  console.log('Confirmation received reservation:', JSON.stringify(reservation, null, 2));
+  console.log('Reservation roomId:', reservation?.roomId);
+  console.log('Reservation roomDetails:', reservation?.roomDetails);
+
   // reservation または roomId がない場合
   if (!reservation || !reservation.roomId) {
+    console.error('Missing reservation or roomId:', reservation);
     return (
       <div>
         <p>エラー: 予約情報がありません。部屋選択ページに戻ってください。</p>
@@ -23,9 +29,9 @@ const Confirmation = () => {
 
   return (
     <div className="confirmation-info">
-         <div className="confirmation-form-title">
-            <h2>予約内容の確認</h2>
-          </div>
+      <div className="confirmation-form-title">
+        <h2>予約内容の確認</h2>
+      </div>
       <div className="confirmation-container">
         <div className="confirmation-form-area">
           <Confirm reservation={reservation} />
