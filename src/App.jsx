@@ -9,6 +9,16 @@ import ThankYou from './pages/ThankYou.jsx';
 import { useState } from 'react';
 import OnsenPage from './pages/OnsenPage.jsx';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]); // 経路変更時に実行
+
+  return null;
+}
+
 function App() {
   const [count, setCount] = useState(0);
 
