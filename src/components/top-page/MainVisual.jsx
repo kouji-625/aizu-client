@@ -9,7 +9,7 @@ import Slider from "react-slick";
 
 
 const MainVisual = () => {
-    const sliderRef = useRef(); // ← refを作る
+    const sliderRef = useRef(); // ← Refオブジェクトを作る
     
     const settings = {
         dots: false, // ドットナビゲーションを非表示（必要ならtrueに）
@@ -30,7 +30,7 @@ const MainVisual = () => {
     }, 12000); // ← 12秒（12000ms）
 
     return () => clearInterval(interval); // クリーンアップ
-  }, []);
+  }, []);　//deps空配列、初回レンダリング時のみ処理実行
 
     return (
         <>
