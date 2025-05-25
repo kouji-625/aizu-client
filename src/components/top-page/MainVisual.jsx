@@ -23,11 +23,11 @@ const MainVisual = () => {
         fade: true //フェードイン
       };
     
-  // 16秒ごとにスライド切り替え
+  // 12秒ごとにスライド切り替え
   useEffect(() => {
     const interval = setInterval(() => {
       sliderRef.current?.slickNext();
-    }, 12000); // ← 16秒（16000ms）
+    }, 12000); // ← 12秒（12000ms）
 
     return () => clearInterval(interval); // クリーンアップ
   }, []);
